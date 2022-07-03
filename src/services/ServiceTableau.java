@@ -12,11 +12,14 @@ import models.TypeChambre;
 public class ServiceTableau implements IService {
 
     Scanner sc = new Scanner(System.in);
+
     TypeChambre indiv = TypeChambre.INDIVIDUEL;
     TypeChambre collect = TypeChambre.COLLECTIF;
+
     ServicePavillon svPav = new ServicePavillon();
 
     private final int TAILLE = 10;
+
     private int indexPav;
     private int indexCh;
 
@@ -65,7 +68,7 @@ public class ServiceTableau implements IService {
         if (indexCh < TAILLE) {
             chambre.setId(idCh);
 
-            System.out.print(" === Numero chambre :");
+            System.out.print(" === Numero chambre : ");
             int numCh = sc.nextInt();
             chambre.setNumeroChambre(numCh);
 
@@ -86,12 +89,13 @@ public class ServiceTableau implements IService {
             }
 
             System.out.println("Dans quel pavillon se trouve cette chambre ?");
-            listerPavillon();
-            System.out.println("Tapez un l'id du pavillon");
+                listerPavillon();
+            System.out.println("Tapez un id du pavillon");
 
             int pav = sc.nextInt();
-            if(pavillons[pav] != null){
-                chambre.setPavillon(pavillons[pav]);
+
+            if(pavillons[(pav-1)] != null){
+                chambre.setPavillon(pavillons[(pav-1)]);
             }else{
                 System.out.println("Ce pavillon n'existe pas !");
             }

@@ -10,6 +10,7 @@ public class ServicePavillon {
     public Pavillon creerPavillon(Pavillon pavillon, int id){
 
         pavillon.setId(id);
+
         System.out.print("Numero du pavillon : ");
         int numPav = sc.nextInt();
         pavillon.setNumeroPavillon(numPav);
